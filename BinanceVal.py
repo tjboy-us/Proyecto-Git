@@ -1,9 +1,14 @@
+# Programa que trae el tipo de cambio en USD por critomoneda
+# y posteriormente calcula el monto en USD
+
+
 import requests
 _ENDPOINT = "https://api.binance.com"
 
 def _url(api):
     return _ENDPOINT+api
 
+# Función que se conecta a la página web 
 def get_price(cripto):
     return requests.get(_url("/api/v3/ticker/price?symbol="+cripto))
 
